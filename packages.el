@@ -9,7 +9,8 @@
 (package! tree-sitter-langs)
 (package! evil-matchit)
 (package! riscv-mode)
-
+(package! youdao-dictionary)
+(package! leetcode)
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
 
