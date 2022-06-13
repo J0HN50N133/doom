@@ -54,6 +54,12 @@
             (kill-local-variable 'prettify-symbols-alist)
             (setq mode-name "🐫")
             ))
+(add-hook 'racket-mode-hook
+          (lambda()
+            (racket-unicode-input-method-enable)
+            (setq mode-name "🧙")
+            ))
+(add-hook 'racket-repl-mode-hook #'racket-unicode-input-method-enable)
 ;;(global-evil-matchit-mode 1)
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
