@@ -60,7 +60,7 @@
             (setq mode-name "🧙")
             ))
 (add-hook 'racket-repl-mode-hook #'racket-unicode-input-method-enable)
-;;(global-evil-matchit-mode 1)
+(global-evil-matchit-mode 1)
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
