@@ -9,6 +9,9 @@
 (package! tree-sitter-langs)
 (package! evil-matchit)
 (package! leetcode)
+
+(package! pyim-tsinghua-dict
+  :recipe (:host github :repo "redguardtoo/pyim-tsinghua-dict" :files ("*.el" "*.pyim")))
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
                                         ;(package! some-package)
 

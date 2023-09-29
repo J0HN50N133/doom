@@ -34,6 +34,8 @@
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-tokyo-night)
 (setq doom-font (font-spec :family "sarasa mono sc" :size 14))
+(unless (doom-font-exists-p doom-font)
+  (setq doom-font nil))
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 ;; (setq display-line-numbers-type t)
@@ -63,6 +65,16 @@
 (add-hook 'racket-repl-mode-hook #'racket-unicode-input-method-enable)
 (global-evil-matchit-mode 1)
 (setq lsp-inlay-hint-enable t)
+
+;; pyim相关
+(require 'pyim-tsinghua-dict)
+(require 'pyim-dregcache)
+(setq default-input-method "pyim")
+(setq pyim-dcache-backend 'pyim-dregcache)
+(setq pyim-page-tooltip 'popup)
+(setq pyim-cloudim 'baidu)
+(pyim-default-scheme 'xiaohe-shuangpin)
+(pyim-tsinghua-dict-enable)
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
