@@ -48,3 +48,5 @@
 ;; (unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
+(package! pyim-tsinghua-dict
+  :recipe (:host github :repo "redguardtoo/pyim-tsinghua-dict" :files ("*.el" "*.pyim")))

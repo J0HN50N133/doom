@@ -32,7 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-gruvbox)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -74,3 +74,18 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; pyim
+(require 'pyim-tsinghua-dict)
+(require 'pyim-dregcache)
+(set evil-pinyin-scheme 'simplified-xiaohe-all)
+;; 将 Emacs 默认输入法设置为 pyim.
+(setq default-input-method "pyim")
+(setq pyim-dcache-backend 'pyim-dregcache)
+(setq pyim-page-tooltip 'popup)
+;; 显示 5 个候选词
+(setq pyim-page-length 5)
+(pyim-default-scheme 'xiaohe-shuangpin)
+(setq pyim-cloudim 'baidu)
+(setq pyim-pinyin-fuzzy-alist '())
+(pyim-tsinghua-dict-enable)
