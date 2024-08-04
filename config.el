@@ -15,7 +15,7 @@
 ;; - `doom-variable-pitch-font' -- a non-monospace font (where applicable)
 ;; - `doom-big-font' -- used for `doom-big-font-mode'; use this for
 ;;   presentations or streaming.
-;; - `doom-unicode-font' -- for unicode glyphs
+;; - `doom-symbol-font' -- for symbols
 ;; - `doom-serif-font' -- for the `fixed-pitch-serif' face
 ;;
 ;; See 'C-h v doom-font' for documentation and more examples of what they
@@ -32,49 +32,17 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-tokyo-night)
-(setq doom-font (font-spec :family "sarasa mono sc" :size 14))
-(unless (doom-font-exists-p doom-font)
-  (setq doom-font nil))
+(setq doom-theme 'doom-one)
+
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-;; (setq display-line-numbers-type t)
+(setq display-line-numbers-type t)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
 
-(custom-set-faces
- `(default ((t (:background nil)))))
-(global-tree-sitter-mode)
-(global-prettify-symbols-mode -1)
-(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 
-;; OCaml configuration
-(add-hook 'tuareg-mode-hook
-          (lambda()
-            (add-hook 'before-save-hook #'+format/buffer nil t)
-            (kill-local-variable 'prettify-symbols-alist)
-            (setq mode-name "🐫")
-            ))
-(add-hook 'racket-mode-hook
-          (lambda()
-            (racket-unicode-input-method-enable)
-            (setq mode-name "🧙")
-            ))
-(add-hook 'racket-repl-mode-hook #'racket-unicode-input-method-enable)
-(global-evil-matchit-mode 1)
-(setq lsp-inlay-hint-enable t)
-
-;; pyim相关
-(require 'pyim-tsinghua-dict)
-(require 'pyim-dregcache)
-(setq default-input-method "pyim")
-(setq pyim-dcache-backend 'pyim-dregcache)
-(setq pyim-page-tooltip 'popup)
-(setq pyim-cloudim 'baidu)
-(pyim-default-scheme 'xiaohe-shuangpin)
-(pyim-tsinghua-dict-enable)
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
