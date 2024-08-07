@@ -78,7 +78,7 @@
 ;; pyim
 (require 'pyim-tsinghua-dict)
 (require 'pyim-dregcache)
-(set evil-pinyin-scheme 'simplified-xiaohe-all)
+(setq evil-pinyin-scheme 'simplified-xiaohe-all)
 ;; 将 Emacs 默认输入法设置为 pyim.
 (setq default-input-method "pyim")
 (setq pyim-dcache-backend 'pyim-dregcache)
@@ -89,3 +89,14 @@
 (setq pyim-cloudim 'baidu)
 (setq pyim-pinyin-fuzzy-alist '())
 (pyim-tsinghua-dict-enable)
+
+;; rustic
+(setq lsp-lens-enable nil)
+(add-hook 'rustic-mode-hook (lambda()
+                              (require 'dap-gdb-lldb)
+                              (require 'dap-cpptools)
+                              (setq lsp-completion-sort-initial-results 'f)))
+
+
+(add-hook 'rustic-mode-hook 'tree-sitter-hl-mode)
+

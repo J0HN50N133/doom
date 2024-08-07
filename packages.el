@@ -50,3 +50,5 @@
 ;; (unpin! t)
 (package! pyim-tsinghua-dict
   :recipe (:host github :repo "redguardtoo/pyim-tsinghua-dict" :files ("*.el" "*.pyim")))
+
+;; (package! rust-mode)
