@@ -100,3 +100,6 @@
 
 (add-hook 'rustic-mode-hook 'tree-sitter-hl-mode)
 
+;; org mode
+(require 'org2ctex)
+
