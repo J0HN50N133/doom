@@ -91,15 +91,12 @@
 (pyim-tsinghua-dict-enable)
 
 ;; rustic
-(setq lsp-lens-enable nil)
 (add-hook 'rustic-mode-hook (lambda()
-                              (require 'dap-gdb-lldb)
-                              (require 'dap-cpptools)
-                              (setq lsp-completion-sort-initial-results 'f)))
-
-
+                              (setq lsp-lens-enable nil)
+                              (require 'dap-codelldb)))
 (add-hook 'rustic-mode-hook 'tree-sitter-hl-mode)
 
-;; org mode
+;;; org mode
 (require 'org2ctex)
+
 

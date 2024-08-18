@@ -10,40 +10,43 @@
  '(safe-local-variable-values
    '((eval progn
       (require 'yasnippet)
-      (yas-minor-mode 1)
       (yas-define-snippets 'org-mode
-       '(("ldb" "=LevelDB=" "LevelDB expansion")))
-      (yas-define-snippets 'org-mode
-       '(("mtbl" "~MemTable~" "MemTable expansion")))
-      (yas-define-snippets 'org-mode
-       '(("imtbl" "=Immutable MemTable=" "Immutable MemTable expansion")))
-      (yas-define-snippets 'org-mode
-       '(("cmpr" "Comparator" "Comparator"))))
+       '(("pprcd" " - *文献名称*: $0\12    - *作者*: $1\12    - *链接*: $2\12    - *发表*: $3 *编号*: $4" "paper record expansion"))))
+     (eval
+      (progn
+        (require 'yasnippet)
+        (yas-define-snippets 'org-mode
+                             '(("pprcd" " - *文献名称*: $0\12  - *作者*: $1\12  - *链接*: $2\12  - *发表*: $3 *编号*: $4\12" "paper record expansion")))))
      (eval progn
       (require 'yasnippet)
+      (org2ctex-mode)
       (yas-minor-mode 1)
       (yas-define-snippets 'org-mode
                            '(("ldb" "=LevelDB=" "LevelDB expansion")))
       (yas-define-snippets 'org-mode
                            '(("mtbl" "~MemTable~" "MemTable expansion")))
       (yas-define-snippets 'org-mode
-                           '(("imtbl" "=Immutable MemTable=" "Immutable MemTable expansion"))))
+                           '(("imtbl" "=Immutable MemTable=" "Immutable MemTable expansion")))
+      (yas-define-snippets 'org-mode
+                           '(("cmpr" "Comparator" "Comparator"))))
      (eval progn
       (require 'yasnippet)
       (yas-minor-mode 1)
-      (yas-define-snippets 'org-mode
-                           '(("ldb" "=LevelDB=" "LevelDB expansion")))
-      (yas-define-snippets 'org-mode
-                           '(("mtbl" "~MemTable~" "MemTable expansion"))))
+      (yas-define-snippets 'rustic-mode
+                           '(("license" "// Copyright 2023 Greptime Team\12//\12// Licensed under the Apache License, Version 2.0 (the \"License\");\12// you may not use this file except in compliance with the License.\12// You may obtain a copy of the License at\12//\12//     http://www.apache.org/licenses/LICENSE-2.0\12//\12// Unless required by applicable law or agreed to in writing, software\12// distributed under the License is distributed on an \"AS IS\" BASIS,\12// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\12// See the License for the specific language governing permissions and\12// limitations under the License.\12" "Greptime Header")))
+      (dap-register-debug-template "standalone from emacs"
+                                   (list :type "lldb" :request "launch" :cwd "${workspaceFolder}" :program "target/debug/greptime" :arg
+                                         '(("standalone" "start"))
+                                         :name "Run standalone")))
      (eval progn
       (require 'yasnippet)
       (yas-minor-mode 1)
-      (yas-define-snippets 'org-mode
-                           '(("ldb" "=LevelDB=" "LevelDB expansion"))))
-     (eval progn
-      (require 'yasnippet)
-      (yas-minor-mode 1)
-      (yas-expand-snippet "=LevelDB=" nil 'org-mode "ldb")))))
+      (yas-define-snippets 'rustic-mode
+                           '(("license" "// Copyright 2023 Greptime Team\12//\12// Licensed under the Apache License, Version 2.0 (the \"License\");\12// you may not use this file except in compliance with the License.\12// You may obtain a copy of the License at\12//\12//     http://www.apache.org/licenses/LICENSE-2.0\12//\12// Unless required by applicable law or agreed to in writing, software\12// distributed under the License is distributed on an \"AS IS\" BASIS,\12// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\12// See the License for the specific language governing permissions and\12// limitations under the License.\12" "Greptime Header")))
+      (dap-register-debug-template "standalone from emacs"
+                                   (list :type "lldb-dap" :request "launch" :cwd "${workspaceFolder}" :program "target/debug/greptime" :arg
+                                         '(("standalone" "start"))
+                                         :name "Run standalone"))))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
