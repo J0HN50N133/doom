@@ -55,3 +55,9 @@
 
 (package! copilot
   :recipe (:host github :repo "copilot-emacs/copilot.el" :files ("*.el")))
+
+(package! typst-preview
+  :recipe (:host github :repo "havarddj/typst-preview.el"))
+
+(package! typst-ts-mode
+  :recipe (:host codeberg :repo "meow_king/typst-ts-mode" :files (:defaults "*.el")))
