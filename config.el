@@ -34,10 +34,12 @@
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-gruvbox)
 
+(setq doom-font (font-spec :family "IntoneMono Nerd Font" :size 14))
+
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
-
+(display-line-numbers-mode)
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
@@ -97,7 +99,7 @@
 (add-hook 'rustic-mode-hook 'tree-sitter-hl-mode)
 
 ;;; org mode
-(require 'org2ctex)
+;;; (require 'org2ctex)
 
 ;; accept completion from copilot and fallback to company
 (use-package! copilot
